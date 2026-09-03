@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { focusAreas } from "@/lib/products";
 import { site } from "@/lib/site";
 
@@ -29,24 +30,16 @@ export function Hero() {
           {site.slogan}
         </p>
         <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
-          Um lugar só para os produtos, os downloads e o link do Twitter.
-          Sem plata. Com coisas no ar, mesmo assim.
+          One place for the products, the downloads, and the Twitter link.
+          No plata. Things in the air anyway.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <a
-            href="#produtos"
-            className="sticker px-5 py-3 text-sm no-underline"
-          >
-            Ver produtos
-          </a>
-          <a
-            href={site.twitter}
-            className="sticker sticker-ghost px-5 py-3 text-sm"
-            rel="noreferrer"
-            target="_blank"
-          >
-            {site.twitterHandle}
-          </a>
+          <Link href="/#products" className="sticker px-5 py-3 text-sm">
+            See products
+          </Link>
+          <Link href={site.linksPath} className="sticker sticker-ghost px-5 py-3 text-sm">
+            Get the apps
+          </Link>
         </div>
       </div>
 

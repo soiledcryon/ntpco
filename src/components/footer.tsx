@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site } from "@/lib/site";
 
 export function Footer() {
@@ -10,6 +11,9 @@ export function Footer() {
             {site.fullName}. {site.slogan}
           </p>
           <div className="mt-4 flex flex-wrap gap-4 text-xs uppercase tracking-[0.16em]">
+            <Link href={site.linksPath} className="hover:text-orange">
+              Links
+            </Link>
             <a href={site.twitter} className="hover:text-orange" rel="noreferrer" target="_blank">
               {site.twitterHandle}
             </a>

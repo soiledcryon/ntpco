@@ -1,6 +1,9 @@
 # NTPCO — ntpco.tech
 
-Site da **No Tengo Plata Company**. Um sítio só para produtos, downloads e o link do Twitter.
+**No Tengo Plata Company** studio site. Products, downloads, and the one Twitter link.
+
+- Home: `/`
+- Linktree: [`/links`](https://ntpco.tech/links) (`/go` and `/linktree` redirect here)
 
 ## Local
 
@@ -11,17 +14,17 @@ npm run dev
 
 Health: [http://localhost:3000/api/health](http://localhost:3000/api/health)
 
-## Produtos
+## Catalog
 
-O catálogo vive em `src/lib/products.ts`. Contactos e Twitter em `src/lib/site.ts`.
+Products live in `src/lib/products.ts`. Contact and Twitter in `src/lib/site.ts`.
 
 ## Deploy
 
-Dockerfile, porta `3000`, health `/api/health`. Coolify no VPS Hostinger.
+Dockerfile, port `3000`, health `/api/health`. Coolify on the Hostinger VPS.
 
 DNS (Namecheap):
 
-| Tipo | Host | Valor |
+| Type | Host | Value |
 |------|------|--------|
 | A | `@` | `2.25.128.4` |
 | A | `www` | `2.25.128.4` |

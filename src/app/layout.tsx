@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   authors: [{ name: site.fullName, url: site.url }],
   openGraph: {
     type: "website",
-    locale: "pt_BR",
+    locale: "en_US",
     url: site.url,
     siteName: site.name,
     title: `${site.name} — ${site.slogan}`,
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="pt-BR"
+      lang="en"
       className={`${display.variable} ${body.variable} ${mark.variable} h-full antialiased`}
     >
       <body className="min-h-full">{children}</body>

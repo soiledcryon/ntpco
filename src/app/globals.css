@@ -162,6 +162,24 @@ a.sticker:hover {
   background: #5a5a5a;
 }
 
+.link-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 16px 16px 18px;
+  background: #101010;
+  border: 1px solid var(--line);
+  box-shadow: 6px 6px 0 #000;
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-row:hover {
+  border-color: rgba(240, 126, 19, 0.45);
+}
+
 .barcode {
   height: 28px;
   width: 92px;

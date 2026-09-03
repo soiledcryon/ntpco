@@ -3,8 +3,9 @@ export const site = {
   fullName: "No Tengo Plata Company",
   slogan: "We build things anyway.",
   description:
-    "Indie studio. Apps, experiments, automation e AI stuff — tudo num lugar só.",
+    "Indie studio. Apps, experiments, automation, and AI stuff — one place for the products and the downloads.",
   url: "https://ntpco.tech",
+  linksPath: "/links",
   email: "contact.ntpco@gmail.com",
   twitter: "https://x.com/ntpco",
   twitterHandle: "@ntpco",
