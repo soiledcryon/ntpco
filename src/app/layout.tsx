@@ -45,6 +45,10 @@ export const metadata: Metadata = {
     description: site.description,
     images: ["/og-cover.png"],
   },
+  icons: {
+    icon: [{ url: "/logo.png", type: "image/png" }],
+    apple: [{ url: "/logo.png" }],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

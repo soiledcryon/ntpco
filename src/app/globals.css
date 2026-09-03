@@ -87,6 +87,11 @@ body::before {
   padding: 0.35em 0.7em;
   box-shadow: 4px 4px 0 #000;
   transform: rotate(-2deg);
+  text-decoration: none;
+}
+
+a.sticker:hover {
+  background: #ff8f2a;
 }
 
 .sticker-ghost {
@@ -105,6 +110,11 @@ body::before {
   background: #101010;
   border: 1px solid var(--line);
   box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.55);
+  transition: transform 160ms ease, border-color 160ms ease;
+}
+
+.card:hover {
+  border-color: rgba(240, 126, 19, 0.35);
 }
 
 .card::after {

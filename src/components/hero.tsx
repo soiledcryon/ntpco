@@ -29,7 +29,7 @@ export function Hero() {
           {site.slogan}
         </p>
         <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
-          Um sítio só para os produtos, os downloads e o link do Twitter.
+          Um lugar só para os produtos, os downloads e o link do Twitter.
           Sem plata. Com coisas no ar, mesmo assim.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
