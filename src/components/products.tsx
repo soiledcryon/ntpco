@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { labProducts, liveProducts, prefersSite } from "@/lib/products";
+import { labProducts, liveProducts } from "@/lib/products";
 import { site } from "@/lib/site";
 
 export function Products() {
@@ -38,30 +38,20 @@ export function Products() {
                   {product.description}
                 </p>
                 <div className="mt-6 flex flex-wrap gap-3">
-                  {prefersSite(product) && product.href ? (
-                    <a
-                      href={product.href}
-                      className="sticker px-4 py-2 text-[11px]"
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      Open site
-                    </a>
-                  ) : null}
                   {product.downloadHref ? (
                     <a
                       href={product.downloadHref}
-                      className={`sticker px-4 py-2 text-[11px] ${prefersSite(product) ? "sticker-ghost" : ""}`}
+                      className="sticker px-4 py-2 text-[11px]"
                       rel="noreferrer"
                       target="_blank"
                     >
                       {product.downloadLabel ?? "Download"}
                     </a>
                   ) : null}
-                  {!prefersSite(product) && product.href ? (
+                  {product.href ? (
                     <a
                       href={product.href}
-                      className="sticker sticker-ghost px-4 py-2 text-[11px]"
+                      className={`sticker px-4 py-2 text-[11px] ${product.downloadHref ? "sticker-ghost" : ""}`}
                       rel="noreferrer"
                       target="_blank"
                     >

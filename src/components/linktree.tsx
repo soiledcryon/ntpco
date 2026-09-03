@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { linktreeProducts, prefersSite } from "@/lib/products";
+import { linktreeProducts } from "@/lib/products";
 import { site } from "@/lib/site";
 
 export function Linktree() {
@@ -40,7 +40,6 @@ export function Linktree() {
       <ol className="mt-8 flex w-full flex-col gap-3">
         {linktreeProducts.map((product, index) => {
           if (!product.href && !product.downloadHref) return null;
-          const siteFirst = prefersSite(product);
           return (
             <li
               key={product.slug}
@@ -56,7 +55,7 @@ export function Linktree() {
                 {product.downloadHref ? (
                   <a
                     href={product.downloadHref}
-                    className={`sticker text-[10px] ${siteFirst ? "sticker-ghost" : ""}`}
+                    className="sticker text-[10px]"
                     rel="noreferrer"
                     target="_blank"
                   >
@@ -66,7 +65,7 @@ export function Linktree() {
                 {product.href ? (
                   <a
                     href={product.href}
-                    className={`sticker text-[10px] ${product.downloadHref && !siteFirst ? "sticker-ghost" : ""}`}
+                    className={`sticker text-[10px] ${product.downloadHref ? "sticker-ghost" : ""}`}
                     rel="noreferrer"
                     target="_blank"
                   >
