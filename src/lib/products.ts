@@ -11,6 +11,7 @@ export type Product = {
   platforms: string[];
   sticker: string;
   onLinks?: boolean;
+  primary?: "site" | "download";
 };
 
 export const products: Product[] = [
@@ -103,6 +104,7 @@ export const products: Product[] = [
     platforms: ["iOS", "Web"],
     sticker: "BR",
     onLinks: true,
+    primary: "site",
   },
   {
     slug: "revelo",
@@ -214,8 +216,12 @@ export const liveProducts = products.filter((product) => product.status === "liv
 export const labProducts = products.filter((product) => product.status === "lab");
 export const linktreeProducts = products.filter((product) => product.onLinks);
 
+export function prefersSite(product: Product) {
+  return product.primary === "site" || !product.downloadHref;
+}
+
 export function productAction(product: Product) {
-  if (product.downloadHref) {
+  if (!prefersSite(product) && product.downloadHref) {
     return {
       href: product.downloadHref,
       label: product.downloadLabel ?? "Download",
