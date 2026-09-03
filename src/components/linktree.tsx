@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { linktreeProducts, productAction } from "@/lib/products";
+import { linktreeProducts, prefersSite } from "@/lib/products";
 import { site } from "@/lib/site";
 
 export function Linktree() {
@@ -20,7 +20,7 @@ export function Linktree() {
       </p>
       <p className="mark underline-brush mt-5 text-xl text-orange">{site.slogan}</p>
       <p className="mt-4 text-center text-sm text-muted">
-        Tap to download. That is the whole point.
+        App Store or the site. One tap each.
       </p>
 
       <div className="mt-5 flex flex-wrap justify-center gap-3">
@@ -39,24 +39,41 @@ export function Linktree() {
 
       <ol className="mt-8 flex w-full flex-col gap-3">
         {linktreeProducts.map((product, index) => {
-          const action = productAction(product);
-          if (!action.href) return null;
+          if (!product.href && !product.downloadHref) return null;
+          const siteFirst = prefersSite(product);
           return (
-            <li key={product.slug}>
-              <a
-                href={action.href}
-                className={`link-row ${index % 2 === 0 ? "-rotate-1" : "rotate-1"}`}
-                rel="noreferrer"
-                target="_blank"
-              >
-                <span className="min-w-0">
-                  <span className="display block text-lg leading-none">{product.name}</span>
-                  <span className="mt-1 block truncate text-[11px] text-muted">
-                    {product.tagline}
-                  </span>
+            <li
+              key={product.slug}
+              className={`link-row ${index % 2 === 0 ? "-rotate-1" : "rotate-1"}`}
+            >
+              <span className="min-w-0">
+                <span className="display block text-lg leading-none">{product.name}</span>
+                <span className="mt-1 block truncate text-[11px] text-muted">
+                  {product.tagline}
                 </span>
-                <span className="sticker shrink-0 text-[10px]">{action.label}</span>
-              </a>
+              </span>
+              <span className="flex shrink-0 flex-wrap justify-end gap-2">
+                {product.downloadHref ? (
+                  <a
+                    href={product.downloadHref}
+                    className={`sticker text-[10px] ${siteFirst ? "sticker-ghost" : ""}`}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    {product.downloadLabel ?? "App Store"}
+                  </a>
+                ) : null}
+                {product.href ? (
+                  <a
+                    href={product.href}
+                    className={`sticker text-[10px] ${product.downloadHref && !siteFirst ? "sticker-ghost" : ""}`}
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Open site
+                  </a>
+                ) : null}
+              </span>
             </li>
           );
         })}
