@@ -7,7 +7,7 @@ export const site = {
   url: "https://ntpco.tech",
   linksPath: "/links",
   email: "contact.ntpco@gmail.com",
-  twitter: "https://x.com/ntpco",
-  twitterHandle: "@ntpco",
+  twitter: "https://x.com/ntpcompany",
+  twitterHandle: "@ntpcompany",
   year: 2026,
 } as const;
