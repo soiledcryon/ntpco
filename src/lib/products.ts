@@ -112,10 +112,9 @@ export const products: Product[] = [
       "Guests join by QR, send photos on the spot, and the host curates the album in real time.",
     href: "https://revelo.photos",
     kind: "app",
-    status: "live",
+    status: "lab",
     platforms: ["iOS", "Web"],
-    sticker: "LIVE",
-    onLinks: true,
+    sticker: "WIP",
   },
   {
     slug: "snaplink",

@@ -85,6 +85,16 @@ export function Products() {
                 <p className="mt-3 text-sm leading-relaxed text-muted">
                   {product.description}
                 </p>
+                {product.href ? (
+                  <a
+                    href={product.href}
+                    className="sticker sticker-ghost mt-4 px-4 py-2 text-[11px]"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Open site
+                  </a>
+                ) : null}
               </div>
             </article>
           ))}
