@@ -7,6 +7,9 @@ export const site = {
   url: "https://ntpco.tech",
   linksPath: "/links",
   email: "contact.ntpco@gmail.com",
+  legalEmail: "contato@brennersolucoes.tech",
+  legalLine:
+    "NTP Co. is a brand of BRENNER SOLUCOES TECNOLOGICAS LTDA · CNPJ 38.265.505/0001-50",
   twitter: "https://x.com/ntpcompany",
   twitterHandle: "@ntpcompany",
   year: 2026,

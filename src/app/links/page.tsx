@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Linktree } from "@/components/linktree";
 import { site } from "@/lib/site";
@@ -21,6 +22,7 @@ export default function LinksPage() {
       <main>
         <Linktree />
       </main>
+      <Footer />
     </div>
   );
 }

@@ -11,6 +11,9 @@ export function Footer() {
             {site.fullName}. {site.slogan}
           </p>
           <div className="mt-4 flex flex-wrap gap-4 text-xs uppercase tracking-[0.16em]">
+            <Link href="/about" className="hover:text-orange">
+              About
+            </Link>
             <Link href={site.linksPath} className="hover:text-orange">
               Links
             </Link>
@@ -29,6 +32,9 @@ export function Footer() {
           </p>
         </div>
       </div>
+      <p className="mt-6 text-[11px] leading-relaxed text-muted">
+        {site.legalLine}
+      </p>
     </footer>
   );
 }

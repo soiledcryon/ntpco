@@ -23,6 +23,9 @@ export function Header() {
         <Link href={site.linksPath} className="hover:text-ink">
           Links
         </Link>
+        <Link href="/about" className="hover:text-ink">
+          About
+        </Link>
         <a href={site.twitter} className="hover:text-ink" rel="noreferrer" target="_blank">
           Twitter
         </a>
